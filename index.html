@@ -9,6 +9,7 @@
   <meta name="author" content="低谷时读书">
   <meta name="keywords" content="">
   <meta name="description" content="">
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
   <script id="hexo-configurations">
   var CONFIG = {
     root: '/',
@@ -63,7 +64,14 @@
 <meta name="generator" content="Hexo 4.2.0"></head>
 <body>
 <div id="page">
-
+  <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'xoQo7OmkE5wyp2cxwJR53BoV-gzGzoHsz',
+            appKey: 'qz6i4M1xImso8bhvE4qLjrEh'
+        })
+    </script>
 <div id="lx-aside" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/cover.jpeg)">
   <div class="overlay">
   <div class="featured">
