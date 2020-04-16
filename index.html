@@ -75,7 +75,7 @@
 </script>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
-<meta name="generator" content="Hexo 4.2.0"></head>
+</head>
 <body>
 <div id="page">
 
@@ -97,6 +97,454 @@
 <div id="lx-main-content">
   <div class="lx-post">
 
+  <div class="lx-entry padding">
+    <div>
+      <h2 class="title"><a href="/2020/04/16/Java%E5%AE%9E%E8%AE%AD-02-%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1-JavaScript/">Java实训-02-网页设计-JavaScript</a></h2>
+      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-16</span>
+      <p><h2 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h2><blockquote>
+<p>JavaScript是基于对象的事件驱动型脚本语言</p>
+<ul>
+<li>基于对象，有别于面向对象</li>
+<li>脚本语言，寄生于HTML页面，用来实现对网页中HTML标签的操作</li>
+<li>事件驱动，网页中发生的动作触发JS代码的执行</li>
+</ul>
+</blockquote>
+<h4 id="1-JS可以干什么？"><a href="#1-JS可以干什么？" class="headerlink" title="1.JS可以干什么？"></a>1.JS可以干什么？</h4><ul>
+<li>JS可以动态修改页面HTML标签的属性</li>
+<li>JS可以改变页面HTML标签的样式</li>
+<li>JS可以动态改变文档的HTML标签结构</li>
+<li>JS可以实现页面与后台数据的动态交互（提交数据，获取数据）</li>
+</ul>
+<h4 id="2-作为Java程序员，我们如何学习JS？"><a href="#2-作为Java程序员，我们如何学习JS？" class="headerlink" title="2.作为Java程序员，我们如何学习JS？"></a>2.作为Java程序员，我们如何学习JS？</h4><ul>
+<li>JS基础语法</li>
+<li>JS内置对象<ul>
+<li>String</li>
+<li>Array</li>
+<li>Math</li>
+<li>RegExp</li>
+</ul>
+</li>
+<li>JS BOM（Browser Object Model）<ul>
+<li>window<ul>
+<li>document</li>
+<li>location</li>
+<li>history</li>
+<li>navigator</li>
+<li>screen</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>JS DOM（Document Object Model）节点操作</li>
+</ul>
+<h4 id="3-获取页面元素的几种方式："><a href="#3-获取页面元素的几种方式：" class="headerlink" title="3.获取页面元素的几种方式："></a>3.获取页面元素的几种方式：</h4><ul>
+<li>var tag = document.getElementById(“id”);</li>
+<li>var tags = document.getElementsByName(“name”);</li>
+<li>var tags = document.getElementsByTagName(“tagName”);</li>
+<li>var tags = document.getElementsByClassName(“class”);</li>
+</ul>
+</p>
+      <div class="post-button"><a class="btn" href="/2020/04/16/Java%E5%AE%9E%E8%AE%AD-02-%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1-JavaScript/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
+    </div>
+  </div>
+  <div class="lx-entry padding">
+    <div>
+      <h2 class="title"><a href="/2020/04/16/Java%E5%AE%9E%E8%AE%AD-02-%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1-CSS/">Java实训-02-网页设计-CSS</a></h2>
+      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-16</span>
+      <p><h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><blockquote>
+<p>CSS Casecade Style Sheet 层叠样式表，用来对网页中HTML视图进行修饰</p>
+</blockquote>
+<h4 id="1-选择器"><a href="#1-选择器" class="headerlink" title="1.选择器"></a>1.选择器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;</span><br><span class="line">	</span><br><span class="line">	&#x2F;*CSS选择器：标签选择器*&#x2F;</span><br><span class="line">	&#x2F;*input&#123;width:120px;height: 30px&#125;*&#x2F;</span><br><span class="line">	body&#123;</span><br><span class="line">		padding: 0px;</span><br><span class="line">		margin: 0px;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	&#x2F;*CSS选择器：类选择器*&#x2F;</span><br><span class="line">	.btnStyle&#123;width:120px;height: 30px&#125;</span><br><span class="line">	.btnStyle2&#123;background: orange; color: white; border: none;&#125;</span><br><span class="line">	</span><br><span class="line">	&#x2F;*CSS选择器：id选择器*&#x2F;</span><br><span class="line">	#wahaha&#123;border: 1px deepskyblue dashed;&#125;</span><br><span class="line">	</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-样式文件"><a href="#2-样式文件" class="headerlink" title="2.样式文件"></a>2.样式文件</h4><h2 id="CSS常用基础样式"><a href="#CSS常用基础样式" class="headerlink" title="CSS常用基础样式"></a>CSS常用基础样式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;</span><br><span class="line">	.sizeStyle&#123;</span><br><span class="line">		width:200px;</span><br><span class="line">		height: 200px;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	.borderStyle&#123;</span><br><span class="line">		border:1px lightgray solid;</span><br><span class="line">		border-radius: 3px;</span><br><span class="line">		box-shadow: gray 1px 3px 5px;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	.marginStyle&#123;</span><br><span class="line">		margin-top:10px;</span><br><span class="line">		margin-left:50px</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	.paddingStyle&#123;</span><br><span class="line">		padding: 50px;</span><br><span class="line">		&#x2F;*padding: 50px  10px;</span><br><span class="line">		padding: 10px  20px 30px 40px;</span><br><span class="line">		padding-top: 50px;</span><br><span class="line">		padding-left: 50px;</span><br><span class="line">		padding-right: 50px;</span><br><span class="line">		padding-bottom: 50px;*&#x2F;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	.backgroundStyle&#123;</span><br><span class="line">		background: url(img&#x2F;bg.bmp);</span><br><span class="line">		&#x2F;*background-position: -100px  -100px;*&#x2F;</span><br><span class="line">		&#x2F;*background-repeat: repeat-y;*&#x2F;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	.fontStyle&#123;</span><br><span class="line">		color:blue;</span><br><span class="line">		font-size: 20px;</span><br><span class="line">		font-family: &quot;arial rounded mt bold&quot;;</span><br><span class="line">		font-weight: bold;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	.textStyle&#123;</span><br><span class="line">		text-align: center;</span><br><span class="line">		text-decoration: none;</span><br><span class="line">		text-shadow: deeppink 3px 3px 3px;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="CSS高级样式"><a href="#CSS高级样式" class="headerlink" title="CSS高级样式"></a>CSS高级样式</h2><ul>
+<li>2D/3D变形  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;&#x2F;title&gt;</span><br><span class="line">		&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;</span><br><span class="line">			.imgStyle1&#123;</span><br><span class="line">				border: 1px gainsboro solid;</span><br><span class="line">				border-radius: 50%;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			.imgStyle1:hover&#123;</span><br><span class="line">				border: 1px deeppink solid;</span><br><span class="line">				&#x2F;*transform: rotate(180deg)*&#x2F;</span><br><span class="line">				&#x2F;*transform: scale(2)*&#x2F;</span><br><span class="line">				&#x2F;*transform:skew(30deg)*&#x2F;</span><br><span class="line">				transform: translate(100px,200px);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&lt;&#x2F;style&gt;</span><br><span class="line">	&lt;&#x2F;head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;img src&#x3D;&quot;img&#x2F;a1.jpg&quot;  width&#x3D;&quot;200&quot; height&#x3D;&quot;200&quot; class&#x3D;&quot;imgStyle1&quot;&#x2F;&gt;</span><br><span class="line">	&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure></li>
+<li>动画  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;&#x2F;title&gt;</span><br><span class="line">		&lt;style type&#x3D;&quot;text&#x2F;css&quot;&gt;</span><br><span class="line">			.imgStyle1&#123;</span><br><span class="line">				border: 1px gainsboro solid;</span><br><span class="line">				border-radius: 50%;</span><br><span class="line">				animation: zhuan 4s linear -1s infinite;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			@keyframes zhuan&#123;</span><br><span class="line">				0%&#123;</span><br><span class="line">					transform: rotate(0deg);</span><br><span class="line">				&#125;</span><br><span class="line">				100%&#123;</span><br><span class="line">					transform: rotate(360deg);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;&#x2F;style&gt;</span><br><span class="line">	&lt;&#x2F;head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;img src&#x3D;&quot;img&#x2F;a1.jpg&quot;  width&#x3D;&quot;200&quot; height&#x3D;&quot;200&quot; class&#x3D;&quot;imgStyle1&quot;&#x2F;&gt;</span><br><span class="line">	&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</p>
+      <div class="post-button"><a class="btn" href="/2020/04/16/Java%E5%AE%9E%E8%AE%AD-02-%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1-CSS/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
+    </div>
+  </div>
+  <div class="lx-entry padding">
+    <div>
+      <h2 class="title"><a href="/2020/04/16/Java%E5%AE%9E%E8%AE%AD-02-%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1-%E5%B8%B8%E7%94%A8HTML%E6%A0%87%E7%AD%BE/">Java实训-02-网页设计-常用HTML标签</a></h2>
+      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-16</span>
+      <p><h2 id="HTML常用标签"><a href="#HTML常用标签" class="headerlink" title="HTML常用标签"></a>HTML常用标签</h2><h4 id="1-显示标签"><a href="#1-显示标签" class="headerlink" title="1.显示标签"></a>1.显示标签</h4><h4 id="2-输入标签"><a href="#2-输入标签" class="headerlink" title="2.输入标签"></a>2.输入标签</h4><h4 id="3-布局标签"><a href="#3-布局标签" class="headerlink" title="3.布局标签"></a>3.布局标签</h4><blockquote>
+<p>就是对网页中的视图进行排版</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">换行：&lt;br&#x2F;&gt;</span><br><span class="line">段落：&lt;p&gt;&lt;&#x2F;p&gt;</span><br><span class="line">水平线:&lt;hr&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>列表</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">水果</span><br><span class="line">&lt;ul type&#x3D;&quot;square&quot;&gt;</span><br><span class="line">	&lt;li&gt;苹果&lt;&#x2F;li&gt;</span><br><span class="line">	&lt;li&gt;西瓜&lt;&#x2F;li&gt;</span><br><span class="line">	&lt;li&gt;香蕉&lt;&#x2F;li&gt;</span><br><span class="line">	&lt;li&gt;橙子&lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ul&gt;</span><br><span class="line"></span><br><span class="line">取款步骤：</span><br><span class="line">&lt;ol type&#x3D;&quot;I&quot;&gt;</span><br><span class="line">	&lt;li&gt;插卡&lt;&#x2F;li&gt;</span><br><span class="line">	&lt;li&gt;输入密码&lt;&#x2F;li&gt;</span><br><span class="line">	&lt;li&gt;输入取款金额&lt;&#x2F;li&gt;</span><br><span class="line">	&lt;li&gt;取钱&lt;&#x2F;li&gt;</span><br><span class="line">	&lt;li&gt;取卡&lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ol&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表格</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;table border&#x3D;&quot;1&quot; width&#x3D;&quot;400&quot; cellspacing&#x3D;&quot;0&quot; height&#x3D;&quot;220&quot; align&#x3D;&quot;center&quot;&gt;</span><br><span class="line">	&lt;tr bgcolor&#x3D;&quot;deepskyblue&quot;&gt;</span><br><span class="line">		&lt;td colspan&#x3D;&quot;2&quot; align&#x3D;&quot;center&quot;&gt;</span><br><span class="line">			&lt;label style&#x3D;&quot;color: white; font-family: 黑体; font-size: 22px;&quot;&gt;用户登录&lt;&#x2F;label&gt;&lt;br &#x2F;&gt;</span><br><span class="line">		&lt;&#x2F;td&gt;</span><br><span class="line">	&lt;&#x2F;tr&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		&lt;td width&#x3D;&quot;100&quot; align&#x3D;&quot;center&quot;&gt;</span><br><span class="line">			&lt;label style&#x3D;&quot;color: gray; font-family: 微软雅黑; font-size: 15px;&quot;&gt;帐号:&lt;&#x2F;label&gt;</span><br><span class="line">		&lt;&#x2F;td&gt;</span><br><span class="line">		&lt;td&gt;</span><br><span class="line">			&lt;input type&#x3D;&quot;text&quot;&#x2F;&gt;</span><br><span class="line">		&lt;&#x2F;td&gt;</span><br><span class="line">	&lt;&#x2F;tr&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		&lt;td align&#x3D;&quot;center&quot;&gt;</span><br><span class="line">			&lt;label style&#x3D;&quot;color: gray; font-family: 微软雅黑; font-size: 15px;&quot;&gt;密码:&lt;&#x2F;label&gt;</span><br><span class="line">		&lt;&#x2F;td&gt;</span><br><span class="line">		&lt;td&gt;</span><br><span class="line">			&lt;input type&#x3D;&quot;password&quot;&#x2F;&gt;</span><br><span class="line">		&lt;&#x2F;td&gt;</span><br><span class="line">	&lt;&#x2F;tr&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		&lt;td&gt;&lt;&#x2F;td&gt;</span><br><span class="line">		&lt;td&gt;</span><br><span class="line">			&lt;input type&#x3D;&quot;reset&quot; value&#x3D;&quot;取消&quot;&#x2F;&gt;</span><br><span class="line">			&lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;登录&quot;&#x2F;&gt;	</span><br><span class="line">		&lt;&#x2F;td&gt;</span><br><span class="line">	&lt;&#x2F;tr&gt;</span><br><span class="line">&lt;&#x2F;table&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>DIV层</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style&#x3D;&quot;background: orange; height: 200px; width: 150px; left: 220px; top: 120px; position: absolute;&quot;&gt;</span><br><span class="line">	&lt;img src&#x3D;&quot;img&#x2F;a1.jpg&quot; height&#x3D;&quot;200&quot; width&#x3D;&quot;150&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div style&#x3D;&quot;background: pink; height: 200px; width: 150px; left: 370px; top: 320px; position: absolute;&quot;&gt;</span><br><span class="line">	&lt;img src&#x3D;&quot;img&#x2F;a2.jpg&quot; height&#x3D;&quot;200&quot; width&#x3D;&quot;150&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div style&#x3D;&quot;background: gray; height: 200px; width: 150px; left: 500px; top: 180px; position: absolute;&quot;&gt;</span><br><span class="line">	&lt;img src&#x3D;&quot;img&#x2F;a3.jpg&quot; height&#x3D;&quot;200&quot; width&#x3D;&quot;150&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div style&#x3D;&quot;background: deepskyblue; height: 200px; width: 150px;&quot;&gt;</span><br><span class="line">	&lt;img src&#x3D;&quot;img&#x2F;a4.jpg&quot; height&#x3D;&quot;200&quot; width&#x3D;&quot;150&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div style&#x3D;&quot;background: yellow; height: 200px; width: 150px;&quot;&gt;</span><br><span class="line">	&lt;img src&#x3D;&quot;img&#x2F;a5.jpg&quot; height&#x3D;&quot;200&quot; width&#x3D;&quot;150&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="4-功能标签"><a href="#4-功能标签" class="headerlink" title="4.功能标签"></a>4.功能标签</h4></li>
+<li><p>超链接</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--超链接--&gt;</span><br><span class="line">&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.baidu.com&quot;&gt;百度&lt;&#x2F;a&gt;</span><br><span class="line">&lt;a href&#x3D;&quot;page01.html&quot;&gt;跳转到page01&lt;&#x2F;a&gt;</span><br><span class="line">&lt;!--锚点--&gt;</span><br><span class="line">&lt;a href&#x3D;&quot;#md1&quot;&gt;跳转到蓝色区域&lt;&#x2F;a&gt;</span><br><span class="line">&lt;div style&#x3D;&quot;height: 1800px; background: orange;&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;a id&#x3D;&quot;md1&quot;&gt;&lt;&#x2F;a&gt;</span><br><span class="line">&lt;div style&#x3D;&quot;height: 1800px; background: deepskyblue;&quot;&gt;&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表单：用来提交用户在页面输入的数据</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action&#x3D;&quot;https:&#x2F;&#x2F;www.baidu.com&#x2F;s&quot;&gt;</span><br><span class="line">	&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;wd&quot;&#x2F;&gt;</span><br><span class="line">	&lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;百度一下&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;form&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="5-页面框架"><a href="#5-页面框架" class="headerlink" title="5.页面框架"></a>5.页面框架</h4></li>
+<li><p>iframe</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;table border&#x3D;&quot;1&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;740&quot; cellspacing&#x3D;&quot;0&quot;&gt;</span><br><span class="line">	&lt;tr height&#x3D;&quot;60&quot;&gt;</span><br><span class="line">		&lt;td colspan&#x3D;&quot;2&quot;&gt;1-1&lt;&#x2F;td&gt;</span><br><span class="line">	&lt;&#x2F;tr&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		&lt;td width&#x3D;&quot;150&quot; align&#x3D;&quot;left&quot; valign&#x3D;&quot;top&quot;&gt;</span><br><span class="line">			&lt;ul&gt;</span><br><span class="line">				&lt;li&gt;</span><br><span class="line">					&lt;a href&#x3D;&quot;page01.html&quot; target&#x3D;&quot;mainFrame&quot;&gt;在线音乐&lt;&#x2F;a&gt;</span><br><span class="line">				&lt;&#x2F;li&gt;</span><br><span class="line">				&lt;li&gt;</span><br><span class="line">					&lt;a href&#x3D;&quot;page02.html&quot; target&#x3D;&quot;mainFrame&quot;&gt;收藏列表&lt;&#x2F;a&gt;</span><br><span class="line">				&lt;&#x2F;li&gt;</span><br><span class="line">				&lt;li&gt;</span><br><span class="line">					&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.baidu.com&quot; target&#x3D;&quot;mainFrame&quot;&gt;百度&lt;&#x2F;a&gt;</span><br><span class="line">				&lt;&#x2F;li&gt;</span><br><span class="line">				&lt;li&gt;</span><br><span class="line">					&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.jd.com&quot; target&#x3D;&quot;mainFrame&quot;&gt;京东&lt;&#x2F;a&gt;</span><br><span class="line">				&lt;&#x2F;li&gt;</span><br><span class="line">			&lt;&#x2F;ul&gt;</span><br><span class="line">		&lt;&#x2F;td&gt;</span><br><span class="line">		&lt;td&gt;</span><br><span class="line">			&lt;iframe name&#x3D;&quot;mainFrame&quot; height&#x3D;&quot;680&quot; width&#x3D;&quot;100%&quot; frameborder&#x3D;&quot;0&quot;&gt;&lt;&#x2F;iframe&gt;</span><br><span class="line">		&lt;&#x2F;td&gt;</span><br><span class="line">	&lt;&#x2F;tr&gt;</span><br><span class="line">&lt;&#x2F;table&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</p>
+      <div class="post-button"><a class="btn" href="/2020/04/16/Java%E5%AE%9E%E8%AE%AD-02-%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1-%E5%B8%B8%E7%94%A8HTML%E6%A0%87%E7%AD%BE/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
+    </div>
+  </div>
+  <div class="lx-entry padding">
+    <div>
+      <h2 class="title"><a href="/2020/04/16/Java%E5%AE%9E%E8%AE%AD-02-%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/">Java实训-02-网页设计</a></h2>
+      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-16</span>
+      <p><h2 id="网页设计"><a href="#网页设计" class="headerlink" title="网页设计"></a>网页设计</h2><blockquote>
+<p>网页，可以通过互联网传输、在浏览器打开呈现视图界面、后缀名为html/htm的文件</p>
+<ul>
+<li><p>一个网页就是一个后缀名为.html的文件</p>
+</li>
+<li><p>文件可以在网络传输</p>
+</li>
+<li><p>文件可以通过浏览器打开</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="1-HTML"><a href="#1-HTML" class="headerlink" title="1.HTML"></a>1.HTML</h4><p>HTML（HyperText Markup Language）超文本标记语言，用于向浏览器传达显示意图。</p>
+<ul>
+<li><p>超文本：以文本的形式在浏览器中显示超出文本范畴的视图（图片，控件，声音，视频）</p>
+</li>
+<li><p>标记：没有逻辑性，一个标记就代表一种视图效果</p>
+</li>
+<li><p>标签：</p>
+<ul>
+<li><p>单标签，只有一部分组成的标签。语法结构：<tagName /></p>
+</li>
+<li><p>双标签，有两部分组成的标签，在头标签和尾标签之间可以添加特定内容。</p>
+<p>语法结构：<tagName></tagName></p>
+</li>
+</ul>
+</li>
+<li><p>属性：在标签中添加的键值对，用于设置/改变标签的特性。</p>
+</li>
+<li><p>网页的基本结构：</p>
+<ul>
+<li>通过<!DOCTYPE html>声明当前HTML文档遵守的规范</li>
+<li>HTML文档有一对根标签：<html></html></li>
+<li>html根标签下有两对子标签：head和body<ul>
+<li><head></head>用于设置当前网页标题、编码等属性相关的内容；</li>
+<li><body></body>用于承载当前网页的内容
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-常用的HTML标签"><a href="#2-常用的HTML标签" class="headerlink" title="2.常用的HTML标签"></a>2.常用的HTML标签</h4><ul>
+<li><p>显示标签：将文本、图片、声音、视频呈现在网页中</p>
+<ul>
+<li><p>文本：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">在网页设计中，颜色有两种表示形式：色号，色名</span></span><br><span class="line"><span class="comment">色号: #FF0000   RGB</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">"deepskyblue"</span> <span class="attr">size</span>=<span class="string">"7"</span> <span class="attr">face</span>=<span class="string">"华文行楷"</span>&gt;</span>华北水利水电大学<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">在label标签的style属性中设置文本样式：</span></span><br><span class="line"><span class="comment">color:deeppink		设置颜色</span></span><br><span class="line"><span class="comment">font-size:100px		设置字体大小</span></span><br><span class="line"><span class="comment">font-family:黑体		设置字体样式</span></span><br><span class="line"><span class="comment">font-weight:bold	设置字体加粗</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">style</span>=<span class="string">"color:deeppink;font-size:30px;font-family:黑体;font-weight:bold;"</span>&gt;</span>软件工程<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>图片：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">img标签用于在网页中显示图片</span></span><br><span class="line"><span class="comment">src属性，指定显示的图片的来源（网络路径）</span></span><br><span class="line"><span class="comment">width属性，设置图片的宽度</span></span><br><span class="line"><span class="comment">height属性，设置图片的高度</span></span><br><span class="line"><span class="comment">alt属性，指定图片无法加载时的替代文本</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://47.96.11.185/images/a.jpg"</span> <span class="attr">width</span>=<span class="string">"300"</span> <span class="attr">alt</span>=<span class="string">"从前有座山"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/15768089304875.gif"</span> <span class="attr">width</span>=<span class="string">"300"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>音频和视频</p>
+</li>
+<li><!--
+        audio标签调用浏览器内置音乐播放器/video标签调用浏览器内置视频播放器
+        src属性，指定播放的来源（网络路径，本地路径）
+        controls属性，显示播放器的控制条
+        autoplay属性，设置音乐自动播放
+        loop属性，设置播放器循环播放
+        width属性，设置播放器宽度
+        height属性，设置播放器高度
+        -->
+
+<pre><code>&lt;audio src=&quot;http://music.163.com/song/media/outer/url?id=36871866&quot; controls autoplay&gt;&lt;/audio&gt;
+&lt;video src=&quot;http://vodkgeyttp8.vod.126.net/cloudmusic/c1e2/core/f994/76f4930cb239338e564484ff46d55e39.mp4?wsSecret=d330c7fe6113892fbcd0d7f3ba383c29&amp;wsTime=1577265161&quot; controls autoplay width=&quot;400&quot;&gt;&lt;/video&gt;</code></pre></li>
+</ul>
+</li>
+<li><p>输入标签：在网页中提供文本输入框、密码输入框、单选按钮、复选按钮等输入视图，让用户能够输入数据</p>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>输入标签</title>
+    <meta name="generator" content="Hexo 4.2.0"></head>
+    <body>
+        <!--
+        对于输入标签：
+        1.对于几乎所有的输入标签都可以添加name属性,当输入的数据通过表单提交时，此属性必须提供（Java代码就是根据name属性来获取输入框中输入的值）
+        2.对于几乎所有的输入标签都可以添加id属性,当需要通过JS操作此标签的时候提供id属性可以更方便
+        3.对于几乎所有的输入标签都可以添加value属性,设置当前输入视图的默认值
+        4.对于单选按钮和复选框必须提供name属性,同一组选项name属性必须相同
+        5.对于单选按钮和复选框必须提供value属性，当选中此选项实际提交的value属性值
+        6.对于下拉菜单的option子标签必须提供value属性，当选中此选项实际提交的value属性值
+        -->
+        文本输入框：<input type="text" placeholder="请输入帐号" name="userName" value="wahaha"/><br/>
+        密码输入框：<input type="password" placeholder="请输入密码"/><br/>
+        文件选择框：<input type="file"/><br/>
+        单选按钮：性别<input type="radio" name="gender" value="M"/>男
+                <input type="radio" name="gender" value="F"/>女<br/>
+        复选框：<input type="checkbox"/><br/>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">	<span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>输入标签<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">		对于输入标签：</span></span><br><span class="line"><span class="comment">		1.对于几乎所有的输入标签都可以添加name属性,当输入的数据通过表单提交时，此属性必须提供（Java代码就是根据name属性来获取输入框中输入的值）</span></span><br><span class="line"><span class="comment">		2.对于几乎所有的输入标签都可以添加id属性,当需要通过JS操作此标签的时候提供id属性可以更方便</span></span><br><span class="line"><span class="comment">		3.对于几乎所有的输入标签都可以添加value属性,设置当前输入视图的默认值</span></span><br><span class="line"><span class="comment">		4.对于单选按钮和复选框必须提供name属性,同一组选项name属性必须相同</span></span><br><span class="line"><span class="comment">		5.对于单选按钮和复选框必须提供value属性，当选中此选项实际提交的value属性值</span></span><br><span class="line"><span class="comment">		6.对于下拉菜单的option子标签必须提供value属性，当选中此选项实际提交的value属性值</span></span><br><span class="line"><span class="comment">		--&gt;</span></span><br><span class="line">		文本输入框：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"请输入帐号"</span> <span class="attr">name</span>=<span class="string">"userName"</span> <span class="attr">value</span>=<span class="string">"wahaha"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">		密码输入框：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"请输入密码"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">		文件选择框：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">		单选按钮：性别<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"M"</span>/&gt;</span>男</span><br><span class="line">				<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"F"</span>/&gt;</span>女<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">		复选框：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	普通按钮：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"普通按钮"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	提交按钮：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"登录"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	重置按钮：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"reset"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	图片按钮：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"image"</span> <span class="attr">src</span>=<span class="string">"img/btn.bmp"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	</span><br><span class="line">	日期输入框：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	数字输入框：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">min</span>=<span class="string">"10"</span> <span class="attr">max</span>=<span class="string">"20"</span> <span class="attr">placeholder</span>=<span class="string">"年龄"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	颜色选择框：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"color"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	</span><br><span class="line">	下拉菜单：</span><br><span class="line">		<span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"北京"</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"深圳"</span>&gt;</span>深圳<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"上海"</span>&gt;</span>上海<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	文本域：</span><br><span class="line">		<span class="tag">&lt;<span class="name">textarea</span> <span class="attr">rows</span>=<span class="string">"4"</span> <span class="attr">cols</span>=<span class="string">"30"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</html>
+</li>
+<li></li>
+</ul>
+<h4 id="3-CSS"><a href="#3-CSS" class="headerlink" title="3.CSS"></a>3.CSS</h4><h4 id="4-JavaScript"><a href="#4-JavaScript" class="headerlink" title="4.JavaScript"></a>4.JavaScript</h4></p>
+      <div class="post-button"><a class="btn" href="/2020/04/16/Java%E5%AE%9E%E8%AE%AD-02-%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
+    </div>
+  </div>
+  <div class="lx-entry padding">
+    <div>
+      <h2 class="title"><a href="/2020/04/16/Java%E5%AE%9E%E8%AE%AD-01-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/">Java实训-01-数据库设计</a></h2>
+      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-16</span>
+      <p><h2 id="实训安排"><a href="#实训安排" class="headerlink" title="实训安排"></a>实训安排</h2><ul>
+<li><p>方向：JavaEE</p>
+<ul>
+<li>传统web应用：教务管理、OA、CRM、ERP(进销存)</li>
+<li>互联网应用：多用户、高并发</li>
+</ul>
+</li>
+<li><p>软件结构<br>  <img src="/images/clipboard1.png" alt="image"></p>
+</li>
+<li><p>技术栈<br>  <img src="/images/clipboard2.png" alt="image"></p>
+</li>
+<li><p>时间安排</p>
+<ul>
+<li>MySQL + JDBC</li>
+<li>HTML\CSS\JavaScript</li>
+<li>jQuery+layui\Servlet</li>
+</ul>
+</li>
+<li><p>项目：基于B/S架构的在线音乐系统</p>
+<ul>
+<li>用户管理模块</li>
+<li>在线音乐模块</li>
+<li>音乐收藏模块</li>
+</ul>
+</li>
+</ul>
+<h2 id="软件开发生命周期"><a href="#软件开发生命周期" class="headerlink" title="软件开发生命周期"></a>软件开发生命周期</h2><ul>
+<li>问题定义/提出问题</li>
+<li>可行性分析<ul>
+<li>技术</li>
+<li>经济</li>
+<li>社会因素</li>
+</ul>
+</li>
+<li>需求分析<ul>
+<li>《软件产品规格说明书》</li>
+<li>得到用户的“签字画押”</li>
+</ul>
+</li>
+<li>概要设计<ul>
+<li>技术选型</li>
+<li>业务分析</li>
+<li>数据分析及建模</li>
+</ul>
+</li>
+<li>详细设计<ul>
+<li>设计每个功能实现的具体步骤</li>
+<li>UML（时序图）</li>
+</ul>
+</li>
+<li>编码实现<ul>
+<li>根据详细设计的步骤进行代码实现</li>
+<li>单元测试</li>
+</ul>
+</li>
+<li>测试<ul>
+<li>测试组完成</li>
+<li>测试-发现bug-改bug-回测</li>
+<li>按照《软件产品规格说明书》要求进行测试</li>
+</ul>
+</li>
+<li>交付<ul>
+<li>交：交项目，部署运行、用户培训、后期维护</li>
+<li>付：付钱</li>
+</ul>
+</li>
+</ul>
+<h2 id="在线音乐系统"><a href="#在线音乐系统" class="headerlink" title="在线音乐系统"></a>在线音乐系统</h2><p><img src="/images/clipboard3.png" alt="image"></p>
+<h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><ul>
+<li><p><strong>1.提取数据实体</strong></p>
+<ul>
+<li>用户</li>
+<li>音乐</li>
+<li>列表</li>
+<li>艺术家</li>
+<li>专辑</li>
+</ul>
+</li>
+<li><p><strong>2.提取数据项</strong></p>
+<ul>
+<li>用户（帐号、密码、昵称、性别，头像、年龄、省、市、区、邮箱、手机号、个性签名）</li>
+<li>音乐（id，name，duration，copyrightId，status，alias，rtype，ftype，mvid，fee，rUrl，mark）</li>
+<li>列表（列表名称、创建日期、列表描述）</li>
+<li>艺术家（id,name,picUrl,alias,albumSize,picId,img1v1Url,img1v1,trans）</li>
+<li>专辑（id,name,publishTime,size,copyrightId,status,picId,mark）</li>
+</ul>
+</li>
+<li><p><strong>3.通过数据库设计范式约束数据项的提取</strong></p>
+<ul>
+<li>数据表中的字段不可再分</li>
+<li>不存在非关键字段对关键字段的部分函数依赖</li>
+<li>不存在非关键字段之间的传递依赖</li>
+</ul>
+</li>
+<li><p><strong>4.绘制E-R图</strong><br>  <img src="C:/Users/dell/AppData/Local/YNote/data/qqAB618F00B64E7963C4FF8B0D2CE65C1E/ebc3039e668d460b97a93b8afc376cfb/clipboard.png" alt="image"></p>
+</li>
+<li><p><strong>5.三线图</strong></p>
+<ul>
+<li><p>表名:tb_user        </p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>类型/长度</th>
+<th>约束</th>
+<th>字段说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>int</td>
+<td>主键，自动增长</td>
+<td>用户ID</td>
+</tr>
+<tr>
+<td>username</td>
+<td>varchar(30)</td>
+<td>NOT NULL, UNIQUE</td>
+<td>用户登录账号</td>
+</tr>
+<tr>
+<td>password</td>
+<td>varchar(16)</td>
+<td>NOT NULL</td>
+<td>用户登录密码</td>
+</tr>
+<tr>
+<td>nickname</td>
+<td>varchar(30)</td>
+<td></td>
+<td>用户昵称</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>char(2)</td>
+<td></td>
+<td>用户性别</td>
+</tr>
+<tr>
+<td>pic_url</td>
+<td>varchar(200)</td>
+<td></td>
+<td>用户头像路径</td>
+</tr>
+<tr>
+<td>age</td>
+<td>int</td>
+<td></td>
+<td>用户年龄</td>
+</tr>
+<tr>
+<td>province</td>
+<td>varchar(20)</td>
+<td></td>
+<td>省份</td>
+</tr>
+<tr>
+<td>city</td>
+<td>varchar(40)</td>
+<td></td>
+<td>城市</td>
+</tr>
+<tr>
+<td>area</td>
+<td>varchar(40)</td>
+<td></td>
+<td>区</td>
+</tr>
+<tr>
+<td>email</td>
+<td>varchar(100)</td>
+<td></td>
+<td>邮箱</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>char(11)</td>
+<td>UNIQUE</td>
+<td>电话</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>varchar(400)</td>
+<td></td>
+<td>个性签名</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="建库建表"><a href="#建库建表" class="headerlink" title="建库建表"></a>建库建表</h2><ul>
+<li>安装MySQL(3306,root,root/admin123)</li>
+<li>启动MySQL</li>
+<li>安装Navicat</li>
+<li>SQL<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">-- 创建数据库</span><br><span class="line">create database db_music;</span><br><span class="line"></span><br><span class="line">-- 使用数据库</span><br><span class="line">use db_music;</span><br><span class="line"></span><br><span class="line">-- 用户信息表</span><br><span class="line">create table tb_user(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">	username varchar(30) not null unique,</span><br><span class="line">	password varchar(16) not null,</span><br><span class="line">	nickname varchar(30),</span><br><span class="line">	gender char(2),</span><br><span class="line">	pic_url varchar(200),</span><br><span class="line">	age int,</span><br><span class="line">	province varchar(20),</span><br><span class="line">	city varchar(40),</span><br><span class="line">	area varchar(40),</span><br><span class="line">	email varchar(100),</span><br><span class="line">	phone char(11) unique,</span><br><span class="line">	remark varchar(400)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-- 收藏列表信息表</span><br><span class="line">create table tb_music_list(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">	name varchar(20) not null,</span><br><span class="line">	time varchar(30),</span><br><span class="line">	remark varchar(200),</span><br><span class="line">	uid int not null,</span><br><span class="line">	constraint FK_LIST_USER foreign key(uid) references tb_user(id)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-- 艺术家信息表</span><br><span class="line">drop table tb_artist;</span><br><span class="line">create table tb_artist(</span><br><span class="line">	id	int primary key,</span><br><span class="line">	name varchar(40) not null,</span><br><span class="line">	pic_url	varchar(200),</span><br><span class="line">	alias	varchar(50),</span><br><span class="line">	album_size int,</span><br><span class="line">	pic_id bigint,</span><br><span class="line">	img1v1_url varchar(200),</span><br><span class="line">	img1v1 int,</span><br><span class="line">	trans varchar(100)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">-- 音乐专辑信息表</span><br><span class="line">create table tb_album(</span><br><span class="line">	id	int primary key,</span><br><span class="line">	name varchar(40) not null,</span><br><span class="line">	publish_time bigint,</span><br><span class="line">	size	int,</span><br><span class="line">	copyright_id int,</span><br><span class="line">	status	int,</span><br><span class="line">	pic_id bigint,</span><br><span class="line">	mark int,</span><br><span class="line">	artist_id int,</span><br><span class="line">	constraint FK_ALBUM_ARTIST foreign key(artist_id) references tb_artist(id)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-- 音乐信息表</span><br><span class="line">create table tb_music(</span><br><span class="line">	id	bigint primary key,</span><br><span class="line">	name varchar(100) not null,</span><br><span class="line">	duration int,</span><br><span class="line">	copyright_id int,</span><br><span class="line">	status int,</span><br><span class="line">	alias varchar(50),</span><br><span class="line">	rtype	int,</span><br><span class="line">	ftype int,</span><br><span class="line">	mvid bigint,</span><br><span class="line">	fee int,</span><br><span class="line">	rurl varchar(100),</span><br><span class="line">	mark int,</span><br><span class="line">	album_id int,</span><br><span class="line">	constraint FK_MUSIC_ALBUM foreign key(album_id) references tb_album(id)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">-- 收藏列表 与 音乐 的关联表</span><br><span class="line">create table tb_lm(</span><br><span class="line">	lid int,</span><br><span class="line">	mid bigint,</span><br><span class="line">	constraint FK_LM_LIST foreign key(lid) references tb_music_list(id),</span><br><span class="line">	constraint FK_LM_MUSIC foreign key(mid) references tb_music(id)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">-- 艺术家 与 音乐 关联表</span><br><span class="line">create table tb_am(</span><br><span class="line">	aid int,</span><br><span class="line">	mid bigint,</span><br><span class="line">	constraint FK_AM_ARTIST foreign key(aid) references tb_artist(id),</span><br><span class="line">	constraint FK_AM_MUSIC foreign key(mid) references tb_music(id)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h4 id="逆向生成数据库模型"><a href="#逆向生成数据库模型" class="headerlink" title="逆向生成数据库模型"></a>逆向生成数据库模型</h4><img src="C:/Users/dell/AppData/Local/YNote/data/qqAB618F00B64E7963C4FF8B0D2CE65C1E/4f48f41d47ca4e57b4a443eb455f0fdb/clipboard.png" alt="image"></li>
+</ul>
+<h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><blockquote>
+<p>Java DataBase Connection Java数据库连接</p>
+</blockquote>
+<ul>
+<li><strong>1.作用</strong><ul>
+<li>实现Java代码与数据库之间的交互</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>2.步骤</strong></p>
+<ul>
+<li>1.建立Java代码与数据库之间的连接（需要依赖数据库驱动包）</li>
+<li>2.准备需要执行的SQL指令</li>
+<li>3.通过数据库连接加载并编译SQL指令</li>
+<li>4.设置SQL指令执行所需的数据—参数</li>
+<li>5.执行SQL指令，并获取执行结果</li>
+<li>6.显示结果</li>
+<li>7.关闭数据库连接</li>
+</ul>
+</li>
+<li><p><strong>3.实现</strong></p>
+<blockquote>
+<p>用户信息表  tb_user</p>
+<ul>
+<li>1.添加用户</li>
+<li>2.查询用户列表</li>
+<li>3.根据帐号和密码查询一个用户</li>
+<li>4.修改用户</li>
+<li>5.删除用户</li>
+</ul>
+</blockquote>
+<ul>
+<li>添加操作  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">package com.qfedu.jdbc.demo;</span><br><span class="line"></span><br><span class="line">import java.sql.*;</span><br><span class="line"></span><br><span class="line">public class InsertDemo &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">		&#x2F;&#x2F; 添加用户信息到tb_user表</span><br><span class="line">		</span><br><span class="line">		try &#123;</span><br><span class="line">			&#x2F;&#x2F;- 1.建立Java代码与数据库之间的连接</span><br><span class="line">			&#x2F;&#x2F;    a.添加数据库驱动jar包（Java代码连接数据库的适配器）：</span><br><span class="line">			&#x2F;&#x2F;			-&gt; 将驱动jar文件拷贝到WebContent&#x2F;WEB-INF&#x2F;lib目录</span><br><span class="line">			&#x2F;&#x2F;			-&gt; 选择拷贝到项目中的jar文件--右键--Build Path-- Add to BuildPath</span><br><span class="line">			&#x2F;&#x2F;    b.通过反射技术加载驱动包中的驱动类（com.mysql.jdbc.Driver）</span><br><span class="line">			Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">			&#x2F;&#x2F;    c.通过驱动管理器获取数据库连接(参数：连接字符串、账号、密码)</span><br><span class="line">			Connection conn &#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;db_music&quot;,&quot;root&quot;,&quot;admin123&quot;);</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;- 2.准备需要执行的SQL指令(注意：如果SQL指令中需要参数，一律使用?作为占位符)</span><br><span class="line">			String sql &#x3D; &quot;insert into tb_user(username,password,nickname,gender,pic_url,age,province,city,area,email,phone,remark) values(?,?,?,?,?,?,?,?,?,?,?,?)&quot;;</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;- 3.通过数据库连接加载并编译SQL指令</span><br><span class="line">			PreparedStatement ps &#x3D; conn.prepareStatement(sql);</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;- 4.设置SQL指令执行所需的数据—参数</span><br><span class="line">			ps.setString(1,&quot;yellowdog&quot;);</span><br><span class="line">			ps.setString(2,&quot;123456&quot;);</span><br><span class="line">			ps.setString(3,&quot;二狗子&quot;);</span><br><span class="line">			ps.setString(4,&quot;男&quot;);</span><br><span class="line">			ps.setString(5,&quot;http:&#x2F;&#x2F;47.96.11.185&#x2F;images&#x2F;a.jpg&quot;);</span><br><span class="line">			ps.setInt(6, 21);</span><br><span class="line">			ps.setString(7,&quot;湖北&quot;);</span><br><span class="line">			ps.setString(8,&quot;武汉&quot;);</span><br><span class="line">			ps.setString(9,&quot;江夏区&quot;);</span><br><span class="line">			ps.setString(10,&quot;haha@hehe.com&quot;);</span><br><span class="line">			ps.setString(11,&quot;13030303300&quot;);</span><br><span class="line">			ps.setString(12,&quot;从前有座山&quot;);</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;- 5.执行SQL指令，并获取执行结果</span><br><span class="line">			&#x2F;&#x2F;增删改操作一律使用executeUpdate():返回整数，表示此操作影响的数据表中行数</span><br><span class="line">			int i &#x3D; ps.executeUpdate();</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;- 6.显示结果</span><br><span class="line">			System.out.println(i&gt;0?&quot;添加成功&quot;:&quot;添加失败&quot;);</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;- 7.关闭数据库连接</span><br><span class="line">			conn.close();</span><br><span class="line">		&#125; catch (ClassNotFoundException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; catch (SQLException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>修改操作  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class UpdateDemo &#123;</span><br><span class="line">    </span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;根据用户id修改用户的其他所有字段</span><br><span class="line">		try &#123;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>删除操作  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public class DeleteDemo &#123;</span><br><span class="line">    	</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;根据id删除一个用户信息</span><br><span class="line">		try &#123;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</p>
+      <div class="post-button"><a class="btn" href="/2020/04/16/Java%E5%AE%9E%E8%AE%AD-01-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
+    </div>
+  </div>
   <div class="lx-entry padding">
     <div>
       <h2 class="title"><a href="/2020/04/16/nobody-can-everglow/">nobody can everglow</a></h2>

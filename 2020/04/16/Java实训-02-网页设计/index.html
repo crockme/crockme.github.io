@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- 爆炸红心效果 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 10; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/firework.js"></script>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content=#58b77a>
+  <title>Java实训-02-网页设计 | lcs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="低谷时读书">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <script id="hexo-configurations">
+  var CONFIG = {
+    root: '/',
+    theme: 'hexo-theme-lx',
+    version: '0.3.9',
+    localsearch:{
+      "enable": false,
+      "trigger": "auto",
+      "top_n_per_article": 1,
+      "unescape": false,
+      "preload": false
+      },
+    path: 'null'
+  };
+</script>
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/css/main.min.css">
+  <style type="text/css">
+    pre,
+    code {
+      font-family: 'Fira Code', monospace;
+    }
+    html {
+      font-family: sans-serif;
+    }
+    body {
+      font-family: sans-serif;
+    }
+    h1, h2, h3, h4, h5, figure {
+      font-family: sans-serif;
+    }
+    .menu-container{
+      font-family: sans-serif;
+    }
+  </style>
+
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "greenish",
+	     });
+	}); 
+	</script>
+  <!--baidu_analytics-->
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?9133112840116d54bc311f72dbbd281e";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+</head>
+<body>
+<div class="single">
+
+<div id="page">
+<div id="lx-aside" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/post_cover.jpeg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><a href="/"><img src="/images/avatar.jpeg"></a></div>
+    <span>2020-04-16</span>
+    <h2>Java实训-02-网页设计</h2>
+    <div class="tags"><i class="fa fa-tag"></i><a class="tag-link" href="/tags/java/" rel="tag">java</a></div>
+    <div class="social-links">
+    <a href="https://github.com/crockme" target="_blank"><i class="fa fa-github fa-fw"></i></a>
+    <a href="mailto:154711335@qq.com" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+</div></div>
+</div>
+</div>
+
+<div id="lx-main-content">
+  <div class="lx-post">
+    <div class="lx-entry padding">
+      <div>
+        <h2 id="网页设计"><a href="#网页设计" class="headerlink" title="网页设计"></a>网页设计</h2><blockquote>
+<p>网页，可以通过互联网传输、在浏览器打开呈现视图界面、后缀名为html/htm的文件</p>
+<ul>
+<li><p>一个网页就是一个后缀名为.html的文件</p>
+</li>
+<li><p>文件可以在网络传输</p>
+</li>
+<li><p>文件可以通过浏览器打开</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="1-HTML"><a href="#1-HTML" class="headerlink" title="1.HTML"></a>1.HTML</h4><p>HTML（HyperText Markup Language）超文本标记语言，用于向浏览器传达显示意图。</p>
+<ul>
+<li><p>超文本：以文本的形式在浏览器中显示超出文本范畴的视图（图片，控件，声音，视频）</p>
+</li>
+<li><p>标记：没有逻辑性，一个标记就代表一种视图效果</p>
+</li>
+<li><p>标签：</p>
+<ul>
+<li><p>单标签，只有一部分组成的标签。语法结构：<tagName /></p>
+</li>
+<li><p>双标签，有两部分组成的标签，在头标签和尾标签之间可以添加特定内容。</p>
+<p>语法结构：<tagName></tagName></p>
+</li>
+</ul>
+</li>
+<li><p>属性：在标签中添加的键值对，用于设置/改变标签的特性。</p>
+</li>
+<li><p>网页的基本结构：</p>
+<ul>
+<li>通过<!DOCTYPE html>声明当前HTML文档遵守的规范</li>
+<li>HTML文档有一对根标签：<html></html></li>
+<li>html根标签下有两对子标签：head和body<ul>
+<li><head></head>用于设置当前网页标题、编码等属性相关的内容；</li>
+<li><body></body>用于承载当前网页的内容
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-常用的HTML标签"><a href="#2-常用的HTML标签" class="headerlink" title="2.常用的HTML标签"></a>2.常用的HTML标签</h4><ul>
+<li><p>显示标签：将文本、图片、声音、视频呈现在网页中</p>
+<ul>
+<li><p>文本：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">在网页设计中，颜色有两种表示形式：色号，色名</span></span><br><span class="line"><span class="comment">色号: #FF0000   RGB</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">"deepskyblue"</span> <span class="attr">size</span>=<span class="string">"7"</span> <span class="attr">face</span>=<span class="string">"华文行楷"</span>&gt;</span>华北水利水电大学<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">在label标签的style属性中设置文本样式：</span></span><br><span class="line"><span class="comment">color:deeppink		设置颜色</span></span><br><span class="line"><span class="comment">font-size:100px		设置字体大小</span></span><br><span class="line"><span class="comment">font-family:黑体		设置字体样式</span></span><br><span class="line"><span class="comment">font-weight:bold	设置字体加粗</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">style</span>=<span class="string">"color:deeppink;font-size:30px;font-family:黑体;font-weight:bold;"</span>&gt;</span>软件工程<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>图片：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">img标签用于在网页中显示图片</span></span><br><span class="line"><span class="comment">src属性，指定显示的图片的来源（网络路径）</span></span><br><span class="line"><span class="comment">width属性，设置图片的宽度</span></span><br><span class="line"><span class="comment">height属性，设置图片的高度</span></span><br><span class="line"><span class="comment">alt属性，指定图片无法加载时的替代文本</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://47.96.11.185/images/a.jpg"</span> <span class="attr">width</span>=<span class="string">"300"</span> <span class="attr">alt</span>=<span class="string">"从前有座山"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/15768089304875.gif"</span> <span class="attr">width</span>=<span class="string">"300"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>音频和视频</p>
+</li>
+<li><!--
+        audio标签调用浏览器内置音乐播放器/video标签调用浏览器内置视频播放器
+        src属性，指定播放的来源（网络路径，本地路径）
+        controls属性，显示播放器的控制条
+        autoplay属性，设置音乐自动播放
+        loop属性，设置播放器循环播放
+        width属性，设置播放器宽度
+        height属性，设置播放器高度
+        -->
+
+<pre><code>&lt;audio src=&quot;http://music.163.com/song/media/outer/url?id=36871866&quot; controls autoplay&gt;&lt;/audio&gt;
+&lt;video src=&quot;http://vodkgeyttp8.vod.126.net/cloudmusic/c1e2/core/f994/76f4930cb239338e564484ff46d55e39.mp4?wsSecret=d330c7fe6113892fbcd0d7f3ba383c29&amp;wsTime=1577265161&quot; controls autoplay width=&quot;400&quot;&gt;&lt;/video&gt;</code></pre></li>
+</ul>
+</li>
+<li><p>输入标签：在网页中提供文本输入框、密码输入框、单选按钮、复选按钮等输入视图，让用户能够输入数据</p>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>输入标签</title>
+    <meta name="generator" content="Hexo 4.2.0"></head>
+    <body>
+        <!--
+        对于输入标签：
+        1.对于几乎所有的输入标签都可以添加name属性,当输入的数据通过表单提交时，此属性必须提供（Java代码就是根据name属性来获取输入框中输入的值）
+        2.对于几乎所有的输入标签都可以添加id属性,当需要通过JS操作此标签的时候提供id属性可以更方便
+        3.对于几乎所有的输入标签都可以添加value属性,设置当前输入视图的默认值
+        4.对于单选按钮和复选框必须提供name属性,同一组选项name属性必须相同
+        5.对于单选按钮和复选框必须提供value属性，当选中此选项实际提交的value属性值
+        6.对于下拉菜单的option子标签必须提供value属性，当选中此选项实际提交的value属性值
+        -->
+        文本输入框：<input type="text" placeholder="请输入帐号" name="userName" value="wahaha"/><br/>
+        密码输入框：<input type="password" placeholder="请输入密码"/><br/>
+        文件选择框：<input type="file"/><br/>
+        单选按钮：性别<input type="radio" name="gender" value="M"/>男
+                <input type="radio" name="gender" value="F"/>女<br/>
+        复选框：<input type="checkbox"/><br/>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">	<span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>输入标签<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">		对于输入标签：</span></span><br><span class="line"><span class="comment">		1.对于几乎所有的输入标签都可以添加name属性,当输入的数据通过表单提交时，此属性必须提供（Java代码就是根据name属性来获取输入框中输入的值）</span></span><br><span class="line"><span class="comment">		2.对于几乎所有的输入标签都可以添加id属性,当需要通过JS操作此标签的时候提供id属性可以更方便</span></span><br><span class="line"><span class="comment">		3.对于几乎所有的输入标签都可以添加value属性,设置当前输入视图的默认值</span></span><br><span class="line"><span class="comment">		4.对于单选按钮和复选框必须提供name属性,同一组选项name属性必须相同</span></span><br><span class="line"><span class="comment">		5.对于单选按钮和复选框必须提供value属性，当选中此选项实际提交的value属性值</span></span><br><span class="line"><span class="comment">		6.对于下拉菜单的option子标签必须提供value属性，当选中此选项实际提交的value属性值</span></span><br><span class="line"><span class="comment">		--&gt;</span></span><br><span class="line">		文本输入框：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"请输入帐号"</span> <span class="attr">name</span>=<span class="string">"userName"</span> <span class="attr">value</span>=<span class="string">"wahaha"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">		密码输入框：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"请输入密码"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">		文件选择框：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">		单选按钮：性别<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"M"</span>/&gt;</span>男</span><br><span class="line">				<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"F"</span>/&gt;</span>女<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">		复选框：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	普通按钮：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"普通按钮"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	提交按钮：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"登录"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	重置按钮：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"reset"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	图片按钮：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"image"</span> <span class="attr">src</span>=<span class="string">"img/btn.bmp"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	</span><br><span class="line">	日期输入框：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	数字输入框：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">min</span>=<span class="string">"10"</span> <span class="attr">max</span>=<span class="string">"20"</span> <span class="attr">placeholder</span>=<span class="string">"年龄"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	颜色选择框：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"color"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	</span><br><span class="line">	下拉菜单：</span><br><span class="line">		<span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"北京"</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"深圳"</span>&gt;</span>深圳<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"上海"</span>&gt;</span>上海<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	文本域：</span><br><span class="line">		<span class="tag">&lt;<span class="name">textarea</span> <span class="attr">rows</span>=<span class="string">"4"</span> <span class="attr">cols</span>=<span class="string">"30"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">	</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</html>
+</li>
+<li></li>
+</ul>
+<h4 id="3-CSS"><a href="#3-CSS" class="headerlink" title="3.CSS"></a>3.CSS</h4><h4 id="4-JavaScript"><a href="#4-JavaScript" class="headerlink" title="4.JavaScript"></a>4.JavaScript</h4>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2020/04/16/Java%E5%AE%9E%E8%AE%AD-02-%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1-%E5%B8%B8%E7%94%A8HTML%E6%A0%87%E7%AD%BE/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>Java实训-...</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2020/04/16/Java%E5%AE%9E%E8%AE%AD-01-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>Java实训-...</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+<div class="comment"><div id="comments"></div></div>
+<footer>
+  <div>
+  Copyright &copy; 2019.<a href="/">lcs</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
+  </div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+</footer>
+
+
+
+</div>
+
+<button class="hamburger hamburger--arrow-r" type="button">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+</button> 
+<div class="menu visibility">
+  <div class="menu-head">
+    <span class="layer">
+      <div class="col">
+        <div class="row for-pic">
+          <div class="profile-pic">
+            <a href="/"><img src="/images/avatar.jpeg" alt="低谷时读书"/></a>
+          </div>
+        </div>
+        <div class="row for-name">
+          <p>低谷时读书</p>
+          <span class="tagline">Hello, World!</span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <nav class="menu-container">
+  <ul class="menu-items">
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>Home</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+    
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-bookmark fa-fw"></i>Pages</span>
+        <ul>
+          <li><a href="/guestbook/">Guestbook</a></li>
+        <li><a href="/about/">About</a></li>
+        </ul>
+    </li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-link fa-fw"></i>Friends</span>
+        <ul>
+          <li> <a href="https://0sec.com.cn" target="_blank">Hacker鑫</a></li>
+        </ul>
+    </li>
+  </ul>
+  </nav>
+</div>
+
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+<script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.easing.min.js"></script>
+<script>
+(function () {
+	"use strict";
+	var goToTop = function() {
+		$(".js-gotop").on("click", function(event){
+			event.preventDefault();
+			$("html, body").animate({
+				scrollTop: $("html").offset().top
+			}, 500, "easeInOutExpo");
+			return false;
+		});
+		$(window).scroll(function(){
+			var $win = $(window);
+			if ($win.scrollTop() > 200) {
+				$(".js-top").addClass("active");
+			} else {
+				$(".js-top").removeClass("active");
+			}
+		});
+	};
+	$(function(){
+		goToTop();
+	});
+}());
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'xoQo7OmkE5wyp2cxwJR53BoV-gzGzoHsz',
+    appKey: 'qz6i4M1xImso8bhvE4qLjrEh',
+    placeholder: 'Say something.',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    lang: 'en' || 'zh-cn'
+  });
+</script>
+
+</body>
+</html>

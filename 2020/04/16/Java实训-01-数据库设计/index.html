@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- 爆炸红心效果 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 10; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/firework.js"></script>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content=#58b77a>
+  <title>Java实训-01-数据库设计 | lcs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="低谷时读书">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <script id="hexo-configurations">
+  var CONFIG = {
+    root: '/',
+    theme: 'hexo-theme-lx',
+    version: '0.3.9',
+    localsearch:{
+      "enable": false,
+      "trigger": "auto",
+      "top_n_per_article": 1,
+      "unescape": false,
+      "preload": false
+      },
+    path: 'null'
+  };
+</script>
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/css/main.min.css">
+  <style type="text/css">
+    pre,
+    code {
+      font-family: 'Fira Code', monospace;
+    }
+    html {
+      font-family: sans-serif;
+    }
+    body {
+      font-family: sans-serif;
+    }
+    h1, h2, h3, h4, h5, figure {
+      font-family: sans-serif;
+    }
+    .menu-container{
+      font-family: sans-serif;
+    }
+  </style>
+
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "greenish",
+	     });
+	}); 
+	</script>
+  <!--baidu_analytics-->
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?9133112840116d54bc311f72dbbd281e";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+<div class="single">
+
+<div id="page">
+<div id="lx-aside" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/post_cover.jpeg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><a href="/"><img src="/images/avatar.jpeg"></a></div>
+    <span>2020-04-16</span>
+    <h2>Java实训-01-数据...</h2>
+    <div class="tags"><i class="fa fa-tag"></i><a class="tag-link" href="/tags/java/" rel="tag">java</a></div>
+    <div class="social-links">
+    <a href="https://github.com/crockme" target="_blank"><i class="fa fa-github fa-fw"></i></a>
+    <a href="mailto:154711335@qq.com" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+</div></div>
+</div>
+</div>
+
+<div id="lx-main-content">
+  <div class="lx-post">
+    <div class="lx-entry padding">
+      <div>
+        <h2 id="实训安排"><a href="#实训安排" class="headerlink" title="实训安排"></a>实训安排</h2><ul>
+<li><p>方向：JavaEE</p>
+<ul>
+<li>传统web应用：教务管理、OA、CRM、ERP(进销存)</li>
+<li>互联网应用：多用户、高并发</li>
+</ul>
+</li>
+<li><p>软件结构<br>  <img src="/images/clipboard1.png" alt="image"></p>
+</li>
+<li><p>技术栈<br>  <img src="/images/clipboard2.png" alt="image"></p>
+</li>
+<li><p>时间安排</p>
+<ul>
+<li>MySQL + JDBC</li>
+<li>HTML\CSS\JavaScript</li>
+<li>jQuery+layui\Servlet</li>
+</ul>
+</li>
+<li><p>项目：基于B/S架构的在线音乐系统</p>
+<ul>
+<li>用户管理模块</li>
+<li>在线音乐模块</li>
+<li>音乐收藏模块</li>
+</ul>
+</li>
+</ul>
+<h2 id="软件开发生命周期"><a href="#软件开发生命周期" class="headerlink" title="软件开发生命周期"></a>软件开发生命周期</h2><ul>
+<li>问题定义/提出问题</li>
+<li>可行性分析<ul>
+<li>技术</li>
+<li>经济</li>
+<li>社会因素</li>
+</ul>
+</li>
+<li>需求分析<ul>
+<li>《软件产品规格说明书》</li>
+<li>得到用户的“签字画押”</li>
+</ul>
+</li>
+<li>概要设计<ul>
+<li>技术选型</li>
+<li>业务分析</li>
+<li>数据分析及建模</li>
+</ul>
+</li>
+<li>详细设计<ul>
+<li>设计每个功能实现的具体步骤</li>
+<li>UML（时序图）</li>
+</ul>
+</li>
+<li>编码实现<ul>
+<li>根据详细设计的步骤进行代码实现</li>
+<li>单元测试</li>
+</ul>
+</li>
+<li>测试<ul>
+<li>测试组完成</li>
+<li>测试-发现bug-改bug-回测</li>
+<li>按照《软件产品规格说明书》要求进行测试</li>
+</ul>
+</li>
+<li>交付<ul>
+<li>交：交项目，部署运行、用户培训、后期维护</li>
+<li>付：付钱</li>
+</ul>
+</li>
+</ul>
+<h2 id="在线音乐系统"><a href="#在线音乐系统" class="headerlink" title="在线音乐系统"></a>在线音乐系统</h2><p><img src="/images/clipboard3.png" alt="image"></p>
+<h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><ul>
+<li><p><strong>1.提取数据实体</strong></p>
+<ul>
+<li>用户</li>
+<li>音乐</li>
+<li>列表</li>
+<li>艺术家</li>
+<li>专辑</li>
+</ul>
+</li>
+<li><p><strong>2.提取数据项</strong></p>
+<ul>
+<li>用户（帐号、密码、昵称、性别，头像、年龄、省、市、区、邮箱、手机号、个性签名）</li>
+<li>音乐（id，name，duration，copyrightId，status，alias，rtype，ftype，mvid，fee，rUrl，mark）</li>
+<li>列表（列表名称、创建日期、列表描述）</li>
+<li>艺术家（id,name,picUrl,alias,albumSize,picId,img1v1Url,img1v1,trans）</li>
+<li>专辑（id,name,publishTime,size,copyrightId,status,picId,mark）</li>
+</ul>
+</li>
+<li><p><strong>3.通过数据库设计范式约束数据项的提取</strong></p>
+<ul>
+<li>数据表中的字段不可再分</li>
+<li>不存在非关键字段对关键字段的部分函数依赖</li>
+<li>不存在非关键字段之间的传递依赖</li>
+</ul>
+</li>
+<li><p><strong>4.绘制E-R图</strong><br>  <img src="C:/Users/dell/AppData/Local/YNote/data/qqAB618F00B64E7963C4FF8B0D2CE65C1E/ebc3039e668d460b97a93b8afc376cfb/clipboard.png" alt="image"></p>
+</li>
+<li><p><strong>5.三线图</strong></p>
+<ul>
+<li><p>表名:tb_user        </p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>类型/长度</th>
+<th>约束</th>
+<th>字段说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>int</td>
+<td>主键，自动增长</td>
+<td>用户ID</td>
+</tr>
+<tr>
+<td>username</td>
+<td>varchar(30)</td>
+<td>NOT NULL, UNIQUE</td>
+<td>用户登录账号</td>
+</tr>
+<tr>
+<td>password</td>
+<td>varchar(16)</td>
+<td>NOT NULL</td>
+<td>用户登录密码</td>
+</tr>
+<tr>
+<td>nickname</td>
+<td>varchar(30)</td>
+<td></td>
+<td>用户昵称</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>char(2)</td>
+<td></td>
+<td>用户性别</td>
+</tr>
+<tr>
+<td>pic_url</td>
+<td>varchar(200)</td>
+<td></td>
+<td>用户头像路径</td>
+</tr>
+<tr>
+<td>age</td>
+<td>int</td>
+<td></td>
+<td>用户年龄</td>
+</tr>
+<tr>
+<td>province</td>
+<td>varchar(20)</td>
+<td></td>
+<td>省份</td>
+</tr>
+<tr>
+<td>city</td>
+<td>varchar(40)</td>
+<td></td>
+<td>城市</td>
+</tr>
+<tr>
+<td>area</td>
+<td>varchar(40)</td>
+<td></td>
+<td>区</td>
+</tr>
+<tr>
+<td>email</td>
+<td>varchar(100)</td>
+<td></td>
+<td>邮箱</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>char(11)</td>
+<td>UNIQUE</td>
+<td>电话</td>
+</tr>
+<tr>
+<td>remark</td>
+<td>varchar(400)</td>
+<td></td>
+<td>个性签名</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="建库建表"><a href="#建库建表" class="headerlink" title="建库建表"></a>建库建表</h2><ul>
+<li>安装MySQL(3306,root,root/admin123)</li>
+<li>启动MySQL</li>
+<li>安装Navicat</li>
+<li>SQL<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">-- 创建数据库</span><br><span class="line">create database db_music;</span><br><span class="line"></span><br><span class="line">-- 使用数据库</span><br><span class="line">use db_music;</span><br><span class="line"></span><br><span class="line">-- 用户信息表</span><br><span class="line">create table tb_user(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">	username varchar(30) not null unique,</span><br><span class="line">	password varchar(16) not null,</span><br><span class="line">	nickname varchar(30),</span><br><span class="line">	gender char(2),</span><br><span class="line">	pic_url varchar(200),</span><br><span class="line">	age int,</span><br><span class="line">	province varchar(20),</span><br><span class="line">	city varchar(40),</span><br><span class="line">	area varchar(40),</span><br><span class="line">	email varchar(100),</span><br><span class="line">	phone char(11) unique,</span><br><span class="line">	remark varchar(400)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-- 收藏列表信息表</span><br><span class="line">create table tb_music_list(</span><br><span class="line">	id int primary key auto_increment,</span><br><span class="line">	name varchar(20) not null,</span><br><span class="line">	time varchar(30),</span><br><span class="line">	remark varchar(200),</span><br><span class="line">	uid int not null,</span><br><span class="line">	constraint FK_LIST_USER foreign key(uid) references tb_user(id)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-- 艺术家信息表</span><br><span class="line">drop table tb_artist;</span><br><span class="line">create table tb_artist(</span><br><span class="line">	id	int primary key,</span><br><span class="line">	name varchar(40) not null,</span><br><span class="line">	pic_url	varchar(200),</span><br><span class="line">	alias	varchar(50),</span><br><span class="line">	album_size int,</span><br><span class="line">	pic_id bigint,</span><br><span class="line">	img1v1_url varchar(200),</span><br><span class="line">	img1v1 int,</span><br><span class="line">	trans varchar(100)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">-- 音乐专辑信息表</span><br><span class="line">create table tb_album(</span><br><span class="line">	id	int primary key,</span><br><span class="line">	name varchar(40) not null,</span><br><span class="line">	publish_time bigint,</span><br><span class="line">	size	int,</span><br><span class="line">	copyright_id int,</span><br><span class="line">	status	int,</span><br><span class="line">	pic_id bigint,</span><br><span class="line">	mark int,</span><br><span class="line">	artist_id int,</span><br><span class="line">	constraint FK_ALBUM_ARTIST foreign key(artist_id) references tb_artist(id)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-- 音乐信息表</span><br><span class="line">create table tb_music(</span><br><span class="line">	id	bigint primary key,</span><br><span class="line">	name varchar(100) not null,</span><br><span class="line">	duration int,</span><br><span class="line">	copyright_id int,</span><br><span class="line">	status int,</span><br><span class="line">	alias varchar(50),</span><br><span class="line">	rtype	int,</span><br><span class="line">	ftype int,</span><br><span class="line">	mvid bigint,</span><br><span class="line">	fee int,</span><br><span class="line">	rurl varchar(100),</span><br><span class="line">	mark int,</span><br><span class="line">	album_id int,</span><br><span class="line">	constraint FK_MUSIC_ALBUM foreign key(album_id) references tb_album(id)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">-- 收藏列表 与 音乐 的关联表</span><br><span class="line">create table tb_lm(</span><br><span class="line">	lid int,</span><br><span class="line">	mid bigint,</span><br><span class="line">	constraint FK_LM_LIST foreign key(lid) references tb_music_list(id),</span><br><span class="line">	constraint FK_LM_MUSIC foreign key(mid) references tb_music(id)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">-- 艺术家 与 音乐 关联表</span><br><span class="line">create table tb_am(</span><br><span class="line">	aid int,</span><br><span class="line">	mid bigint,</span><br><span class="line">	constraint FK_AM_ARTIST foreign key(aid) references tb_artist(id),</span><br><span class="line">	constraint FK_AM_MUSIC foreign key(mid) references tb_music(id)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h4 id="逆向生成数据库模型"><a href="#逆向生成数据库模型" class="headerlink" title="逆向生成数据库模型"></a>逆向生成数据库模型</h4><img src="C:/Users/dell/AppData/Local/YNote/data/qqAB618F00B64E7963C4FF8B0D2CE65C1E/4f48f41d47ca4e57b4a443eb455f0fdb/clipboard.png" alt="image"></li>
+</ul>
+<h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><blockquote>
+<p>Java DataBase Connection Java数据库连接</p>
+</blockquote>
+<ul>
+<li><strong>1.作用</strong><ul>
+<li>实现Java代码与数据库之间的交互</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>2.步骤</strong></p>
+<ul>
+<li>1.建立Java代码与数据库之间的连接（需要依赖数据库驱动包）</li>
+<li>2.准备需要执行的SQL指令</li>
+<li>3.通过数据库连接加载并编译SQL指令</li>
+<li>4.设置SQL指令执行所需的数据—参数</li>
+<li>5.执行SQL指令，并获取执行结果</li>
+<li>6.显示结果</li>
+<li>7.关闭数据库连接</li>
+</ul>
+</li>
+<li><p><strong>3.实现</strong></p>
+<blockquote>
+<p>用户信息表  tb_user</p>
+<ul>
+<li>1.添加用户</li>
+<li>2.查询用户列表</li>
+<li>3.根据帐号和密码查询一个用户</li>
+<li>4.修改用户</li>
+<li>5.删除用户</li>
+</ul>
+</blockquote>
+<ul>
+<li>添加操作  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">package com.qfedu.jdbc.demo;</span><br><span class="line"></span><br><span class="line">import java.sql.*;</span><br><span class="line"></span><br><span class="line">public class InsertDemo &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">		&#x2F;&#x2F; 添加用户信息到tb_user表</span><br><span class="line">		</span><br><span class="line">		try &#123;</span><br><span class="line">			&#x2F;&#x2F;- 1.建立Java代码与数据库之间的连接</span><br><span class="line">			&#x2F;&#x2F;    a.添加数据库驱动jar包（Java代码连接数据库的适配器）：</span><br><span class="line">			&#x2F;&#x2F;			-&gt; 将驱动jar文件拷贝到WebContent&#x2F;WEB-INF&#x2F;lib目录</span><br><span class="line">			&#x2F;&#x2F;			-&gt; 选择拷贝到项目中的jar文件--右键--Build Path-- Add to BuildPath</span><br><span class="line">			&#x2F;&#x2F;    b.通过反射技术加载驱动包中的驱动类（com.mysql.jdbc.Driver）</span><br><span class="line">			Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">			&#x2F;&#x2F;    c.通过驱动管理器获取数据库连接(参数：连接字符串、账号、密码)</span><br><span class="line">			Connection conn &#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;db_music&quot;,&quot;root&quot;,&quot;admin123&quot;);</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;- 2.准备需要执行的SQL指令(注意：如果SQL指令中需要参数，一律使用?作为占位符)</span><br><span class="line">			String sql &#x3D; &quot;insert into tb_user(username,password,nickname,gender,pic_url,age,province,city,area,email,phone,remark) values(?,?,?,?,?,?,?,?,?,?,?,?)&quot;;</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;- 3.通过数据库连接加载并编译SQL指令</span><br><span class="line">			PreparedStatement ps &#x3D; conn.prepareStatement(sql);</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;- 4.设置SQL指令执行所需的数据—参数</span><br><span class="line">			ps.setString(1,&quot;yellowdog&quot;);</span><br><span class="line">			ps.setString(2,&quot;123456&quot;);</span><br><span class="line">			ps.setString(3,&quot;二狗子&quot;);</span><br><span class="line">			ps.setString(4,&quot;男&quot;);</span><br><span class="line">			ps.setString(5,&quot;http:&#x2F;&#x2F;47.96.11.185&#x2F;images&#x2F;a.jpg&quot;);</span><br><span class="line">			ps.setInt(6, 21);</span><br><span class="line">			ps.setString(7,&quot;湖北&quot;);</span><br><span class="line">			ps.setString(8,&quot;武汉&quot;);</span><br><span class="line">			ps.setString(9,&quot;江夏区&quot;);</span><br><span class="line">			ps.setString(10,&quot;haha@hehe.com&quot;);</span><br><span class="line">			ps.setString(11,&quot;13030303300&quot;);</span><br><span class="line">			ps.setString(12,&quot;从前有座山&quot;);</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;- 5.执行SQL指令，并获取执行结果</span><br><span class="line">			&#x2F;&#x2F;增删改操作一律使用executeUpdate():返回整数，表示此操作影响的数据表中行数</span><br><span class="line">			int i &#x3D; ps.executeUpdate();</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;- 6.显示结果</span><br><span class="line">			System.out.println(i&gt;0?&quot;添加成功&quot;:&quot;添加失败&quot;);</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;- 7.关闭数据库连接</span><br><span class="line">			conn.close();</span><br><span class="line">		&#125; catch (ClassNotFoundException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; catch (SQLException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>修改操作  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class UpdateDemo &#123;</span><br><span class="line">    </span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;根据用户id修改用户的其他所有字段</span><br><span class="line">		try &#123;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>删除操作  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public class DeleteDemo &#123;</span><br><span class="line">    	</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;根据id删除一个用户信息</span><br><span class="line">		try &#123;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2020/04/16/Java%E5%AE%9E%E8%AE%AD-02-%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>Java实训-...</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2020/04/16/nobody-can-everglow/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>nobody ...</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+<div class="comment"><div id="comments"></div></div>
+<footer>
+  <div>
+  Copyright &copy; 2019.<a href="/">lcs</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
+  </div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+</footer>
+
+
+
+</div>
+
+<button class="hamburger hamburger--arrow-r" type="button">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+</button> 
+<div class="menu visibility">
+  <div class="menu-head">
+    <span class="layer">
+      <div class="col">
+        <div class="row for-pic">
+          <div class="profile-pic">
+            <a href="/"><img src="/images/avatar.jpeg" alt="低谷时读书"/></a>
+          </div>
+        </div>
+        <div class="row for-name">
+          <p>低谷时读书</p>
+          <span class="tagline">Hello, World!</span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <nav class="menu-container">
+  <ul class="menu-items">
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>Home</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+    
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-bookmark fa-fw"></i>Pages</span>
+        <ul>
+          <li><a href="/guestbook/">Guestbook</a></li>
+        <li><a href="/about/">About</a></li>
+        </ul>
+    </li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-link fa-fw"></i>Friends</span>
+        <ul>
+          <li> <a href="https://0sec.com.cn" target="_blank">Hacker鑫</a></li>
+        </ul>
+    </li>
+  </ul>
+  </nav>
+</div>
+
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+<script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.easing.min.js"></script>
+<script>
+(function () {
+	"use strict";
+	var goToTop = function() {
+		$(".js-gotop").on("click", function(event){
+			event.preventDefault();
+			$("html, body").animate({
+				scrollTop: $("html").offset().top
+			}, 500, "easeInOutExpo");
+			return false;
+		});
+		$(window).scroll(function(){
+			var $win = $(window);
+			if ($win.scrollTop() > 200) {
+				$(".js-top").addClass("active");
+			} else {
+				$(".js-top").removeClass("active");
+			}
+		});
+	};
+	$(function(){
+		goToTop();
+	});
+}());
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'xoQo7OmkE5wyp2cxwJR53BoV-gzGzoHsz',
+    appKey: 'qz6i4M1xImso8bhvE4qLjrEh',
+    placeholder: 'Say something.',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    lang: 'en' || 'zh-cn'
+  });
+</script>
+
+</body>
+</html>
