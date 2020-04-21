@@ -98,11 +98,9 @@
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        <p>##一、预编译语句的使用<br>创建 PreparedStatement 对象</p>
-<p>以下的代码段（其中 conn 是 Connection 对象）创建包含带4个 IN 参数占位符的 SQL 语句的 PreparedStatement 对象：</p>
-<p>String sql = “insert into t_customer values(?,?,?,?)”;//组织一条含有参数的SQL语句</p>
-<p>PreparedStatement ps = conn.prepareStatement(sql);ps对象包含语句 insert into t_customer values(?,?,?,?)，它已发送给DBMS，并为执行作好了准备。</p>
-<p>传递 IN 参数<br>在执行 PreparedStatement 对象之前，必须设置每个 ? 参数的值。这可通过调用 setXXX 方法来完成，其中 XXX 是与该参数相应的类型。<br>##二、预编译语句的作用<br>提高效率：当需要对数据库进行数据插入、更新或者删除的时候，程序会发送整个SQL语句给数据库处理和执行。数据库处理一个SQL语句，需要完成解析SQL语句、检查语法和语义以及生成代码；一般说来，处理时间要比执行语句所需要的时间长。预编译语句在创建的时候已经是将指定的SQL语句发送给了DBMS，完成了解析、检查、编译等工作。因此，当一个SQL语句需要执行多次时，使用预编译语句可以减少处理时间，提高执行效率。<br>提高安全性：防止sql注入。<br>##三、mybatis中”#（）”和“$（）”的区别<br>#{}是预编译处理，${}是字符串替换。mybatis在处理#{}时，会将sql中的#{}替换为?号，调用PreparedStatement的set方法来赋值；mybatis在处理${}时，就是把${}替换成变量的值。使用#{}可以有效的防止SQL注入，提高系统安全性。</p>
+        <h2 id="一、预编译语句的使用"><a href="#一、预编译语句的使用" class="headerlink" title="一、预编译语句的使用"></a>一、预编译语句的使用</h2><p>创建 PreparedStatement 对象<br>以下的代码段（其中 conn 是 Connection 对象）创建包含带4个 IN 参数占位符的 SQL 语句的 PreparedStatement 对象：<br>String sql = “insert into t_customer values(?,?,?,?)”;//组织一条含有参数的SQL语句<br>PreparedStatement ps = conn.prepareStatement(sql);ps对象包含语句 insert into t_customer values(?,?,?,?)，它已发送给DBMS，并为执行作好了准备。<br>传递 IN 参数<br>在执行 PreparedStatement 对象之前，必须设置每个 ? 参数的值。这可通过调用 setXXX 方法来完成，其中 XXX 是与该参数相应的类型。</p>
+<h2 id="二、预编译语句的作用"><a href="#二、预编译语句的作用" class="headerlink" title="二、预编译语句的作用"></a>二、预编译语句的作用</h2><p>提高效率：当需要对数据库进行数据插入、更新或者删除的时候，程序会发送整个SQL语句给数据库处理和执行。数据库处理一个SQL语句，需要完成解析SQL语句、检查语法和语义以及生成代码；一般说来，处理时间要比执行语句所需要的时间长。预编译语句在创建的时候已经是将指定的SQL语句发送给了DBMS，完成了解析、检查、编译等工作。因此，当一个SQL语句需要执行多次时，使用预编译语句可以减少处理时间，提高执行效率。<br>提高安全性：防止sql注入。</p>
+<h2 id="三、mybatis中”-（）”和“-（）”的区别"><a href="#三、mybatis中”-（）”和“-（）”的区别" class="headerlink" title="三、mybatis中”#（）”和“$（）”的区别"></a>三、mybatis中”#（）”和“$（）”的区别</h2><p>#{}是预编译处理，${}是字符串替换。mybatis在处理#{}时，会将sql中的#{}替换为?号，调用PreparedStatement的set方法来赋值；mybatis在处理${}时，就是把${}替换成变量的值。使用#{}可以有效的防止SQL注入，提高系统安全性。</p>
 
       </div>
     </div>
