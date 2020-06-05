@@ -99,6 +99,15 @@
 
   <div class="lx-entry padding">
     <div>
+      <h2 class="title"><a href="/2020/06/05/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%8B%BFwebshell%E7%9A%84%E8%BF%87%E7%A8%8B/">记一次拿webshell的过程</a></h2>
+      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-06-05</span>
+      <p><p>##前言<br>在临近毕业答辩之际，答辩老师为了确定答辩顺序，在qq群里发了个随机抽签的链接。点进去发现，这个小网页应该是临时部署上去的，她的8080端口还部署有一个完整的系统。于是和一好友商量，准备拿这个网站下手学习一下。<br>##准备工作<br>扫扫更健康<br>先用御剑扫描web目录<img src="/images/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%8B%BFwebshell%E7%9A%84%E8%BF%87%E7%A8%8B/001.jpg" alt=""><br>再用Nmap扫描查看open状态 <img src="/images/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%8B%BFwebshell%E7%9A%84%E8%BF%87%E7%A8%8B/002.jpg" alt=""><br>##开始整<br>21看ftp文件 22爆破ssh<br>80 8080 Web服务 手工看功能点 注入点 上传点 输入点<br>经过ssh弱口令简单尝试后无果，查看其登录注册功能，发现注册的邮箱验证码功能是假的，点了几次都没有收到验证码，开始陷入怀疑和沉思中。<br>点进登录页面，发现忘记密码功能可用，链接为另一台服务器。惊了，难道还是分布式部署。于是重新进行以上流程，发现3306端口MySQL开放，正所谓柳暗花明又一村。<br>发现8080端口存在tomcat默认页面，tomcat默认页面也可攻击。<br>爆破MySQL密码，成功拿到密码。连上去，查表回到Web后台，或直接写shell。有几个mysql下getshell的方法<a href="http://sh1yan.top/2018/05/26/mysql-writ-shell/" target="_blank" rel="noopener">http://sh1yan.top/2018/05/26/mysql-writ-shell/</a><br>这里先用管理员账号登录进去，看看有什么好东西。<br>这种存在参数?xx=xx的可能存在SQL注入(GET型)<img src="/images/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%8B%BFwebshell%E7%9A%84%E8%BF%87%E7%A8%8B/003.jpg" alt=""><br>存在表单、涉及到和数据库查询操作的，可能存在POST型注入。<br>而后发现网站会员具有上传文件的功能（上传证件照片等待管理员审核），测试后发现并没有文件拓展名检测，直接上传jsp小马。<img src="/images/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%8B%BFwebshell%E7%9A%84%E8%BF%87%E7%A8%8B/004.jpg" alt="">随后需要找到jsp的路径。上传后会员无法查看自己上传的文件，于是登录管理员账号查看。<br>上传后会员无法查看自己上传的文件，于是登录管理员账号查看。成功getshell。<img src="/images/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%8B%BFwebshell%E7%9A%84%E8%BF%87%E7%A8%8B/005.jpg" alt=""><br>##总结<br>真好玩<br>最后感谢一位不愿意透露姓名的好友</p>
+</p>
+      <div class="post-button"><a class="btn" href="/2020/06/05/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%8B%BFwebshell%E7%9A%84%E8%BF%87%E7%A8%8B/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
+    </div>
+  </div>
+  <div class="lx-entry padding">
+    <div>
       <h2 class="title"><a href="/2020/04/21/%E9%A2%84%E7%BC%96%E8%AF%91%E7%90%86%E8%A7%A3/">Mybatis中#{}和${}区别以及预编译理解</a></h2>
       <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-21</span>
       <p><h2 id="一、预编译语句的使用"><a href="#一、预编译语句的使用" class="headerlink" title="一、预编译语句的使用"></a>一、预编译语句的使用</h2><p>创建 PreparedStatement 对象<br>以下的代码段（其中 conn 是 Connection 对象）创建包含带4个 IN 参数占位符的 SQL 语句的 PreparedStatement 对象：<br>String sql = “insert into t_customer values(?,?,?,?)”;//组织一条含有参数的SQL语句<br>PreparedStatement ps = conn.prepareStatement(sql);ps对象包含语句 insert into t_customer values(?,?,?,?)，它已发送给DBMS，并为执行作好了准备。<br>传递 IN 参数<br>在执行 PreparedStatement 对象之前，必须设置每个 ? 参数的值。这可通过调用 setXXX 方法来完成，其中 XXX 是与该参数相应的类型。</p>
@@ -585,17 +594,6 @@
       <p><p><img src="/images/everglow1.jpg" alt=""><br><img src="/images/everglow2.jpg" alt=""></p>
 </p>
       <div class="post-button"><a class="btn" href="/2020/04/16/nobody-can-everglow/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
-    </div>
-  </div>
-  <div class="lx-entry padding">
-    <div>
-      <h2 class="title"><a href="/2020/04/14/just-for-test/">just for test</a></h2>
-      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-14</span>
-      <p><blockquote class='blockquote-center'><p>人类的悲欢并不相通，我只觉得他们吵闹。<br><strong>——鲁迅</strong></p>
-</blockquote>
-<p><img src="/images/insert_image.jpg" alt=""></p>
-</p>
-      <div class="post-button"><a class="btn" href="/2020/04/14/just-for-test/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
     </div>
   </div>
 
